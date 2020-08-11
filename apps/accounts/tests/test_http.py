@@ -6,16 +6,9 @@ from rest_framework import status
 from rest_framework.reverse import reverse
 from rest_framework.test import APITestCase
 
-PASSWORD = 'password'
+from core.test_helpers import PASSWORD
 
-
-def create_user(username='user@ride.com', password=PASSWORD):
-    return get_user_model().objects.create_user(
-        username=username,
-        first_name='user_first',
-        last_name='user_last',
-        password=password
-    )
+from core.test_helpers import create_user
 
 
 class AuthenticationTest(APITestCase):
